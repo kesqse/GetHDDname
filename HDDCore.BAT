@@ -1,0 +1,13 @@
+SET STR0=HD-
+SET STR1=%1
+ECHO %STR1%|FIND "%STR0%"
+if not ERRORLEVEL 1 goto F-HDD
+goto G-HDD
+:F-HDD
+SET HDDRV=F:
+SET SDDRV=G:
+exit /b
+:G-HDD
+SET HDDRV=G:
+SET SDDRV=F:
+exit /b
